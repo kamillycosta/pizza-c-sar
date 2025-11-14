@@ -1,0 +1,213 @@
+/* THEME: Preto Futurista com Vermelho Neon (Pizza César) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;800&display=swap');
+
+:root{
+  --bg:#060606;
+  --panel:#0f0f11;
+  --card:#121214;
+  --accent:#ff2e2e;      /* neon vermelho */
+  --accent-2:#ff5a5a;
+  --muted:#bdbdbd;
+  --glass: rgba(255,255,255,0.02);
+  --radius:12px;
+  --shadow: 0 12px 40px rgba(0,0,0,0.7);
+}
+
+/* RESET */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:'Inter',system-ui,Roboto,Arial}
+body{background:var(--bg);color:var(--muted);-webkit-font-smoothing:antialiased}
+
+/* CONTAINER */
+.container{max-width:1150px;margin:0 auto;padding:24px}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:60;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.15));backdrop-filter: blur(6px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:52px;height:52px;object-fit:contain;border-radius:10px}
+.brand-text h1{font-family:'Poppins';color:#fff;font-size:18px;margin:0}
+.brand-text .slogan{color:var(--accent);font-size:12px}
+
+/* NAV */
+.nav a{color:#eee;margin-left:18px;text-decoration:none;font-weight:600;opacity:0.95}
+.nav .nav-cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:8px 12px;border-radius:12px;color:white;box-shadow:0 8px 30px rgba(255,40,40,0.12)}
+
+/* HERO */
+.hero{padding:40px 0}
+.hero-inner{display:flex;gap:28px;align-items:center}
+.hero-left{flex:1}
+.hero-title{font-family:'Poppins';color:#fff;font-size:34px;margin-bottom:8px}
+.hero-sub{color:var(--muted);margin-bottom:16px}
+.btn{display:inline-block;padding:11px 16px;border-radius:12px;font-weight:700;text-decoration:none}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:none;box-shadow:0 14px 40px rgba(255,50,50,0.14)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+/* VISUAL CARD */
+.visual-card{width:420px;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12))}
+.visual-card img{width:100%;height:320px;object-fit:cover;display:block}
+.card-accent{padding:12px;background:linear-gradient(90deg, rgba(255,30,30,0.08), rgba(0,0,0,0.08));color:#fff;font-weight:700;text-align:center}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.fcard{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:16px;border-radius:12px;box-shadow:var(--shadow);text-align:center}
+.fcard h3{color:#fff}
+
+/* GRID (pedido) */
+.grid{display:grid;grid-template-columns:1fr 380px;gap:20px}
+.col-left{min-width:0}
+.col-right{min-width:0}
+
+/* CARDS */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:16px;border-radius:12px;box-shadow:var(--shadow)}
+.mt{margin-top:14px}
+
+/* MENU GRID */
+.menu-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.menu-item{display:flex;gap:12px;align-items:center;padding:10px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+.menu-item img{width:86px;height:66px;object-fit:cover;border-radius:8px;transition:transform .25s ease}
+.menu-item:hover img{transform:scale(1.06)}
+.mi-body strong{color:#fff}
+.mi-body small{color:var(--muted);margin-top:6px}
+.mi-actions{margin-top:8px}
+.mi-qty{width:72px;padding:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--muted)}
+
+/* DRINKS & FORM */
+.drink-row label{display:block;margin-bottom:8px;color:var(--muted)}
+input[type="text"], input[type="tel"], select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--muted);margin-bottom:12px}
+
+/* SUMMARY */
+.summary p{margin:6px 0;color:var(--muted)}
+.summary strong{color:#fff}
+
+/* BUTTONS */
+.btn-whatsapp{background:#25D366;color:#fff;border-radius:10px;padding:10px;border:none;cursor:pointer}
+
+/* MAP */
+.map-frame iframe{width:100%;height:200px;border-radius:10px;border:0;display:block}
+
+/* CARDÁPIO (red cards) */
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.red-card{background:linear-gradient(180deg,#2a0b0b 0%, #190606 100%);color:#fff;padding:14px;border-radius:12px;text-align:center}
+.red-card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+
+/* TAXA TABELA */
+.taxa-tabela{width:100%;border-collapse:collapse}
+.taxa-tabela th,.taxa-tabela td{padding:12px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+.nota{color:var(--muted);margin-top:10px}
+
+/* CONFIRM BOX */
+.confirm-card .confirm-text{color:var(--muted);white-space:pre-wrap}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,#25D366,#128C7E);color:white;padding:12px 14px;border-radius:999px;box-shadow:0 12px 30px rgba(37,211,102,0.15);text-decoration:none;font-weight:700;display:flex;align-items:center;gap:10px;z-index:100}
+
+/* RESPONSIVO */
+@media(max-width:980px){
+  .grid{grid-template-columns:1fr}
+  .visual-card{width:100%}
+  .hero-inner{flex-direction:column}
+  .hero-right{order:-1}
+}
+
+@media(max-width:520px){
+  .header-inner{padding:12px}
+  .hero-title{font-size:22px}
+  .menu-grid{grid-template-columns:1fr}
+}
+body {
+    background: url("imgs/fundo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+}
+.card {
+    background: url("imgs/card.jpg");
+    background-size: cover;
+    backdrop-filter: blur(4px);
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 0 0 15px red;
+    transition: .3s;
+}
+.rodape, .info-endereco, .endereco-loja {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.link-maps {
+    color: #ff2a2a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-maps:hover {
+    text-shadow: 0 0 10px red;
+}
+body {
+background: #000;
+color: #fff;
+margin: 0;
+font-family: Arial, sans-serif;
+text-align: center;
+}
+
+
+/* Cabeçalho */
+.topo {
+padding: 20px;
+background: #111;
+border-bottom: 2px solid red;
+}
+
+
+.logo {
+width: 120px;
+filter: drop-shadow(0 0 10px red);
+}
+
+
+.slogan {
+font-style: italic;
+margin-top: -10px;
+color: #ff3b3b;
+}
+
+
+/* Banner */
+.banner img {
+width: 100%;
+border-bottom: 3px solid red;
+}
+
+
+/* Menu */
+.menu-principal a {
+display: inline-block;
+padding: 15px 25px;
+margin: 15px;
+background: red;
+color: #fff;
+border-radius: 10px;
+text-decoration: none;
+font-weight: bold;
+transition: .3s;
+}
+
+
+.menu-principal a:hover {
+background: #770000;
+box-shadow: 0 0 15px red;
+}
+
+
+/* Cards */
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+padding: 20px;
+}

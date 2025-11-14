@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Administrativo - Pizza César</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="admin-header">
+<h1>Painel Administrativo</h1>
+<p>Gerencie pedidos, cardápio e taxas</p>
+</header>
+
+
+<nav class="admin-menu">
+<button onclick="mostrarSessao('pedidos')">Pedidos</button>
+<button onclick="mostrarSessao('cardapio')">Cardápio</button>
+<button onclick="mostrarSessao('taxas')">Taxas</button>
+<button onclick="mostrarSessao('relatorios')">Relatórios</button>
+</nav>
+
+
+<section id="pedidos" class="sessao ativa">
+<h2>Pedidos em Tempo Real</h2>
+<div id="lista-pedidos" class="lista"></div>
+</section>
+
+
+<section id="cardapio" class="sessao">
+<h2>Editar Cardápio</h2>
+<form id="form-cardapio">
+<input type="text" id="nomePizza" placeholder="Nome da pizza">
+<input type="number" id="precoPizza" placeholder="Preço">
+<button type="button" onclick="adicionarPizza()">Adicionar Pizza</button>
+</form>
+<div id="lista-cardapio" class="lista"></div>
+</section>
+
+
+<section id="taxas" class="sessao">
+<h2>Editar Taxas de Entrega</h2>
+<form id="form-taxas">
+<input type="text" id="regiao" placeholder="Região">
+<input type="number" id="valorTaxa" placeholder="Valor da taxa">
+<button type="button" onclick="adicionarTaxa()">Salvar</button>
+</form>
+<div id="lista-taxas" class="lista"></div>
+</section>
+
+
+<section id="relatorios" class="sessao">
+<h2>Relatórios</h2>
+<p>Total de vendas, pizzas mais pedidas, horários de pico e muito mais.</p>
+</section>
+
+
+<script src="admin.js"></script>
+<footer class="rodape">
+<h3>Pizza César</h3>
+<p>Sudoeste Bloco B 75 - Sudoeste/Octogonal,<br>
+Brasília - DF, 70673-612</p>
+<a href="https://www.google.com/maps?q=Sudoeste+Bloco+B+75+Brasilia" target="_blank" class="link-maps">📍 Ver no Google Maps</a>
+</footer>
+</body>
+</html>

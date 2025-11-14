@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pedir - Pizza César</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="brand">
+        <img src="imgs/logo.png" alt="Pizza César" class="logo">
+        <div class="brand-text">
+          <h1>Pizza <span>César</span></h1>
+          <small class="slogan">Onde impera o sabor</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="pedido.html" class="nav-cta">Pedir</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="taxas.html">Taxas</a>
+      </nav>
+
+      <div class="header-controls">
+        <button id="modeToggleTop" class="icon-btn">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-pedido">
+    <h2 class="page-title">Monte seu pedido</h2>
+
+    <section class="grid">
+      <!-- LEFT: catálogo / seleção -->
+      <div class="col col-left">
+        <div class="card">
+          <h3>Escolha suas pizzas</h3>
+          <div class="menu-grid">
+            <!-- item -->
+            <div class="menu-item" data-name="Calabresa" data-price="45">
+              <img src="imgs/calabresa.jpg" alt="Calabresa">
+              <div class="mi-body">
+                <strong>Calabresa</strong><small>R$45,00</small>
+                <div class="mi-actions"><input class="mi-qty" type="number" min="0" value="0"></div>
+              </div><div class="card">
+    <img src="imgs/calabresa.jpg" alt="Pizza Calabresa">
+    <h3>Calabresa</h3>
+    <p>R$ 42,90</p>
+</div>
+
+            </div>
+
+            <div class="menu-item" data-name="Frango com Catupiry" data-price="48">
+              <img src="imgs/frango.jpg" alt="Frango">
+              <div class="mi-body">
+                <strong>Frango com Catupiry</strong><small>R$48,00</small>
+                <div class="mi-actions"><input class="mi-qty" type="number" min="0" value="0"></div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-name="Portuguesa" data-price="46">
+              <img src="imgs/portuguesa.jpg" alt="Portuguesa">
+              <div class="mi-body">
+                <strong>Portuguesa</strong><small>R$46,00</small>
+                <div class="mi-actions"><input class="mi-qty" type="number" min="0" value="0"></div>
+              </div><div class="card">
+    <img src="imgs/portuguesa.jpg" alt="Pizza Portuguesa">
+    <h3>Portuguesa</h3>
+    <p>R$ 45,90</p>
+</div><div class="card">
+    <img src="imgs/frango.jpg" alt="Pizza Frango com Catupiry">
+    <h3>Frango com Catupiry</h3>
+    <p>R$ 46,90</p>
+</div>
+            </div>
+
+            <div class="menu-item" data-name="4 Queijos" data-price="52">
+              <img src="imgs/quatroqueijos.jpg" alt="4 Queijos">
+              <div class="mi-body">
+                <strong>4 Queijos</strong><small>R$52,00</small>
+                <div class="mi-actions"><input class="mi-qty" type="number" min="0" value="0"></div>
+              </div><div class="card">
+    <img src="imgs/quatroqueijos.jpg" alt="Pizza Quatro Queijos">
+    <h3>Quatro Queijos</h3>
+    <p>R$ 47,90</p>
+</div>
+            </div>
+
+            <div class="menu-item" data-name="Marguerita" data-price="44">
+              <img src="imgs/marguerita.jpg" alt="Marguerita">
+              <div class="mi-body">
+                <strong>Marguerita</strong><small>R$44,00</small>
+                <div class="mi-actions"><input class="mi-qty" type="number" min="0" value="0"></div>
+              </div><div class="card">
+    <img src="imgs/margherita.jpg" alt="Pizza Margherita">
+    <h3>Margherita</h3>
+    <p>R$ 39,90</p>
+</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt">
+          <h3>Bebidas</h3>
+          <div class="drink-row">
+            <label><input class="drink-checkbox" type="checkbox" data-name="Coca-Cola 2L" data-price="12"> Coca-Cola 2L — R$12</label>
+            <label><input class="drink-checkbox" type="checkbox" data-name="Guaraná 2L" data-price="10"> Guaraná 2L — R$10</label>
+          </div><div class="card">
+    <img src="imgs/coca.jpg" alt="Coca-Cola 2L">
+    <h3>Coca-Cola 2L</h3>
+    <p>R$ 12,00</p>
+</div><div class="card">
+    <img src="imgs/guarana.jpg" alt="Guaraná Antártica 2L">
+    <h3>Guaraná 2L</h3>
+    <p>R$ 10,00</p>
+</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: checkout / resumo -->
+      <aside class="col col-right">
+        <div class="card">
+          <h3>Dados do pedido</h3>
+
+          <label>Nome</label><input id="nome" type="text" placeholder="Seu nome">
+          <label>Telefone</label><input id="telefone" type="tel" placeholder="(61) 9xxxx-xxxx">
+          <label>Entrega ou Retirada?</label>
+          <select id="tipoEntrega">
+            <option value="entrega">Entrega</option>
+            <option value="retirada">Retirada</option>
+          </select>
+
+          <div id="enderecoBox" class="hidden">
+            <label>Região (calcula taxa)</label>
+            <select id="regiao">
+              <option value="">-- selecione --</option>
+              <option value="sudoeste" data-taxa="4">Sudoeste/Octogonal — R$4</option>
+              <option value="centro" data-taxa="5">Centro — R$5</option>
+              <option value="sul" data-taxa="7">Sul — R$7</option>
+              <option value="norte" data-taxa="10">Norte — R$10</option>
+              <option value="leste" data-taxa="8">Leste — R$8</option>
+            </select>
+            <label>Endereço completo</label><input id="endereco" type="text" placeholder="Rua, nº, complemento, bairro">
+          </div>
+
+          <label>Pagamento</label>
+          <select id="pagamento">
+            <option value="">-- escolha --</option>
+            <option>Crédito</option>
+            <option>Débito</option>
+            <option>PIX</option>
+            <option>Dinheiro</option>
+          </select>
+
+          <div class="summary" aria-live="polite">
+            <p id="itensResumo">Itens: —</p>
+            <p id="taxaResumo">Taxa: R$ 0,00</p>
+            <p id="totalResumo"><strong>Total: R$ 0,00</strong></p>
+          </div>
+
+          <div class="checkout-actions">
+            <button id="btnAddCart" class="btn btn-outline">Atualizar carrinho</button>
+            <button id="btnFinalizar" class="btn btn-primary">Finalizar pedido</button>
+            <button id="btnWhats" class="btn-whatsapp">Enviar pelo WhatsApp</button>
+          </div>
+        </div>
+
+        <div class="card mt">
+          <h4>Localização</h4>
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps?q=Sudoeste+Bloco+B+75+Sudoeste+Octogonal+Bras%C3%ADlia+DF+70673-612&output=embed" loading="lazy"></iframe>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <div id="confirmBox" class="card hidden confirm-card">
+      <h3>Resumo final</h3>
+      <div id="confirmText" class="confirm-text"></div>
+      <div class="confirm-actions">
+        <button id="novoPedido" class="btn btn-outline">Novo pedido</button>
+        <button id="confirmWhats" class="btn btn-primary">Enviar no WhatsApp</button>
+      </div>
+    </div>
+  </main>
+
+  <a class="whatsapp-float" id="waFloat" href="https://wa.me/5561994100515" target="_blank">WhatsApp</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fazer Pedido - Pizza César</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<h1 class="titulo-pagina">🛒 Finalizar Pedido</h1>
+
+
+<form id="formPedido">
+
+
+<label>Nome:</label>
+<input type="text" id="nome" required>
+
+
+<label>Telefone:</label>
+<input type="text" id="telefone" required>
+
+
+<label>Endereço (caso seja entrega):</label>
+<input type="text" id="endereco">
+
+
+<label>Entrega ou Retirada:</label>
+<select id="tipo">
+<option value="Entrega">Entrega</option>
+<option value="Retirada">Retirada</option>
+</select>
+
+
+<label>Sabor da Pizza:</label>
+<select id="pizza">
+<option value="Margherita - 39.90">Margherita – R$ 39,90</option>
+<option value="Calabresa - 42.90">Calabresa – R$ 42,90</option>
+<option value="Portuguesa - 45.90">Portuguesa – R$ 45,90</option>
+<option value="Frango - 46.90">Frango com Catupiry – R$ 46,90</option>
+<option value="Quatro Queijos - 47.90">Quatro Queijos – R$ 47,90</option>
+</select>
+
+
+<label>Bebida:</label>
+<select id="bebida">
+<option value="Nenhuma - 0">Nenhuma</option>
+<option value="Coca 2L - 12.00">Coca-Cola 2L – R$ 12,00</option>
+<option value="Guaraná 2L - 10.00">Guaraná 2L – R$ 10,00</option>
+</select>
+
+
+<label>Forma de Pagamento:</label>
+<select id="pagamento">
+<option>Crédito</option>
+<option>Débito</option>
+<option>Pix</option>
+</select>
+
+
+<button type="button" onclick="finalizarPedido()">Finalizar Pedido</button>
+
+
+</form>
+
+
+<div id="resumo"></div>
+
+
+<script src="script.js"></script>
+</body>
+</html> 
